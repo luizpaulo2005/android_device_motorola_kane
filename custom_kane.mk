@@ -21,6 +21,14 @@ TARGET_SUPPORTS_QUICK_TAP := false
 ## Samsung apps in hardware/samsung need the Lineage SDK, which PixelOS lacks
 PRODUCT_SOURCE_ROOT_DIRS += -hardware/samsung/packages
 
+## Exynos device: keep Soong from analyzing Qualcomm-only trees (saves RAM)
+PRODUCT_SOURCE_ROOT_DIRS += \
+    -device/qcom \
+    -hardware/qcom \
+    -hardware/qcom-caf \
+    -vendor/qcom \
+    -vendor/codeaurora
+
 ## Device identifier, this must come after all inclusions
 PRODUCT_DEVICE := kane
 PRODUCT_NAME := custom_kane
