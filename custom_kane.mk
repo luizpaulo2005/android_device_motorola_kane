@@ -18,6 +18,9 @@ $(call inherit-product, vendor/custom/config/common_full_phone.mk)
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SUPPORTS_QUICK_TAP := false
 
+## Samsung apps in hardware/samsung need the Lineage SDK, which PixelOS lacks
+PRODUCT_SOURCE_ROOT_DIRS += -hardware/samsung/packages
+
 ## Device identifier, this must come after all inclusions
 PRODUCT_DEVICE := kane
 PRODUCT_NAME := custom_kane
